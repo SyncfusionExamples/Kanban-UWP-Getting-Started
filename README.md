@@ -9,14 +9,14 @@ The following section provides an assistance to create a simple Kanban applicati
 1. Open the Reference Manager window from project.
 2. Choose Windows > Extensions > Syncfusion Controls for UWP XAML.
 
-![Getting Started for UWP SfKanban](new_kanban_img1.jpeg)
+![Getting Started for UWP SfKanban](SfKanban_images/new_kanban_img1.jpeg)
 
 
 ### Adding assembly reference
 
 Individual reference can be added to the project instead of SDK “Syncfusion Controls for UWP XAML” which refers all the controls in the Syncfusion control library.
 
-![Getting Started for UWP SfKanban](new_kanban_img2.jpeg)
+![Getting Started for UWP SfKanban](SfKanban_images/new_kanban_img2.jpeg)
 
 
 In the Add Reference window, browse and choose the reference assembly from the following location. 
@@ -68,9 +68,8 @@ using Syncfusion.UI.Xaml.Kanban;
 
 SfKanban kanban = new SfKanban();
 
-{% endhighlight %}
+```
 
-{% endtabs %}
 
 ### Adding SfKanban from toolbox
 
@@ -91,7 +90,9 @@ Now the “Syncfusion Controls for UWP XAML” reference is added to the applica
 
 You need to create a collection of KanbanModel objects for populating SfKanban.
 
-{% highlight c# %}
+**[C#]**
+
+```
    
     public class TaskDetails
     {
@@ -177,31 +178,29 @@ You need to create a collection of KanbanModel objects for populating SfKanban.
         public ObservableCollection<KanbanModel> Tasks { get; set; }
     }
 
-{% endhighlight %}
-
+```
 ### Binding data
 
 In order to bind the data source of the SfKanban, set `ItemsSource` property as shown below.
 
-{% tabs %}
-
-{% highlight xaml %}
+**[XAML]**
+```
 
 <syncfusion:SfKanban ItemsSource="{Binding Tasks}" />
 
-{% endhighlight %}
+```
 
-{% highlight c# %}
+**[C#]**
+
+```
 
 SfKanban kanban = new SfKanban()
 {
     ItemsSource = new TaskDetails().Tasks
 };
 
-{% endhighlight %}
+```
 
-
-{% endtabs %}
 
 ### Defining columns
 
@@ -215,9 +214,8 @@ In this example, the data whose Category property’s value is set as Open will 
 
 The following code example illustrates how this can be done.
 
-{% tabs %}
-
-{% highlight xaml %}
+**[XAML]**
+```
 
   <syncfusion:SfKanban MinColumnWidth="150" 
                        ColumnMappingPath="Category" 
@@ -231,12 +229,10 @@ The following code example illustrates how this can be done.
             <syncfusion:KanbanColumn Categories="Review,Done" Title="Done"></syncfusion:KanbanColumn>
 
 </syncfusion:SfKanban>
+```
 
-
-{% endhighlight %}
-
-{% highlight c# %}
-
+**[C#]**
+```
 SfKanban kanban = new SfKanban()
 {
     AutoGenerateColumns = false,
@@ -271,10 +267,7 @@ kanban.Columns.Add(new KanbanColumn()
 
 grid.Children.Add(kanban);
 
-
-{% endhighlight %}
-
-{% endtabs %}
+```
 
 ![Defining columns in UWP SfKanban](SfKanban_images/column.png)
 
@@ -283,7 +276,7 @@ You can also set [`AutoGenerateColumns`](https://help.syncfusion.com/cr/cref_fi
 
 N> When the columns are auto-generated, you can handle the ColumnsGenerated event to customize the columns.
 
-You can find the complete getting started sample from this [link](https://github.com/SyncfusionExamples/Kanban-UWP-Getting-Started/tree/master/).
+
 
 
 
